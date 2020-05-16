@@ -1,0 +1,13 @@
+{% extends "temp.html" %}
+{% block body %} 
+    <h1>関節リウマチ簡易診断</h1>
+    
+    <form method="post" action="/judge.html">
+    <input type="checkbox" name="selfcheck" value="woman">女性ですか<br>
+    <input type="checkbox" name="selfcheck" value="age">高齢者ですか<br>
+    <input type="checkbox" name="selfcheck" value="kowabari">強張りがありますか<br>
+    <input type="file" name = "image">
+    <input type="submit" value="送信">
+    </form>
+{% endblock %}
+

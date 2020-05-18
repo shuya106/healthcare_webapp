@@ -1,0 +1,20 @@
+{% extends "temp.html" %}
+{% block body %} 
+    <h1>健康管理</h1>
+
+    {% for data_temp in data_body_temperature: %}
+        {{data_temp.id}}
+        {{data_temp.temperature}}
+    {% endfor %}
+
+    {% for memo in data_memo: %}
+        {{memo.title}}
+        {{memo.content}}
+    {% endfor %}
+
+    <br>
+    <br>
+
+    <a href="graph.html">体温グラフ</a>
+
+{% endblock %}

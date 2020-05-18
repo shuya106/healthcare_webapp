@@ -2,5 +2,15 @@
 {% block body %} 
     <h1>健康管理</h1>
     <a href="diagnosis.html">簡易検査</a>
+    <a href="self_record.html">体調入力</a>
+
+    <form method="post" action="/confirm.html">
+        <input type="number" name="temp" step="0.1">体温入力
+        <input type="submit" value="送信">
+    </form>
+    <p></p>
+    <p></p>
+
+    <a href="/data_list.html">一覧</a>
 
 {% endblock %}

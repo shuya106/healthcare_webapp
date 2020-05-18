@@ -1,0 +1,15 @@
+{% extends "temp.html" %}
+{% block body %} 
+    <h1>体調入力</h1>
+    
+    <form method="post" action="/confirm.html">
+        <label for="title">タイトル</label>
+        <input type="text" name="title" value="">
+        <p></p>
+        <label for="content">本文</label>
+        <textarea name="content" cols="40" rows="10"></textarea>
+        <p></p>
+        <button type="submit">保存する</button>
+    </form>
+{% endblock %}
+

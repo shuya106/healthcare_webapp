@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<form method ='POST'>{% csrf_token %}
+
+    {{ form.as_p }}
+     <input type='submit' value='作成する'>
+
+</form>
+<a href="{% url 'list' %}">戻る</a>
+
+{{ max_temp }}<br>
+{{ weather }}
+
+{% endblock content %}

@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+<h1>気温、体調グラフ</h1>
+
+  <canvas id="myLineChart"></canvas>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.js"></script>
+  <script>
+  var ctx = document.getElementById("myLineChart");
+
+  var myLineChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: [{% for item in input_date_list %}
+            "{{item}}",
+        {% endfor %}],
+      datasets: [
+        {
+
+          label: '最高気温(度）',
+          data: {{ max_temp_list }},
+          borderColor: "rgb(255, 0, 0)",
+          backgroundColor: 'rgba(0, 0, 0, 0)',
+          type: 'line',
+        },
+        {
+
+          label: '体調不良',
+          data: {{ condition_list }},
+          backgroundColor: 'rgb(0, 0, 255)',
+        }
+      ],
+    },
+    options: {
+      title: {
+        display: true,
+        text: '気温'
+      },
+       scales: {
+        yAxes: [{
+          id: 'left_graph',
+          position: 'left',
+          ticks: {
+            suggestedMax: 40,
+            suggestedMin: 0,
+            stepSize: 10,
+            callback: function(value, index, values){
+              return  value +  '度'
+            }
+          }
+        }
+        ]
+      },
+    }
+  });
+  </script>
+
+  <a href="{% url 'list' %}">戻る</a>
+</div>
+{% endblock content %}

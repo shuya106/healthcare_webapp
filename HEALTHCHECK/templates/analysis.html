@@ -1,0 +1,19 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<br><br><br>
+
+
+<div class = 'container'>
+    結果
+    {{ result }}<br>
+
+    原因
+    {{ most_feature }}<br>
+    おすすめ
+    {{ recomend }}
+</div>
+
+<a href="{% url 'list' %}">戻る</a>
+
+{% endblock content %}

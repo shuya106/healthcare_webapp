@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<br><br><br>
+<div class="container">
+    <a href="{% url 'analysis' %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">analysis</a>
+
+    <a href="{% url 'graph' %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">graph</a>
+
+    <a href="{% url 'create' %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">create</a>
+
+</div>
+
+<div class = 'container'>
+    {% for item in object_list %}
+    <div class="alert alert-success" role="alert">
+        <p>最高気温：{{ item.max_temp }}</p>
+        <p>天気:{{ item.weather }}</p>
+        <p>体調：{{ item.condition }}</p>
+        <p>日付：{{ item.input_date }}</p>
+        <a href="{% url 'update' item.pk %}" class="btn btn-info" tabindex="-1" role="button" aria-disabled="true">編集</a>
+        
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock content %}

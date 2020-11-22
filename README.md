@@ -13,6 +13,6 @@
 
 ----------------------------------<br>
 クイックスタート<br>
-cd HEALTHCHECK
+cd HEALTHCHECK<br>
 python manage.py runserver
 

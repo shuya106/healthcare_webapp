@@ -11,3 +11,8 @@
 - 気温などから体調予測
 - 体調推移をグラフ化
 
+----------------------------------<br>
+クイックスタート<br>
+cd HEALTHCHECK
+python manage.py runserver
+
